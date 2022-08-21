@@ -1,19 +1,19 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight inline">
             {{ __('Events') }}
         </h2>
-    </x-slot>
 
-    @if(Auth::user()->role == 'admin')
-    <div class="max-w-4xl p-4 mx-auto sm:px-6 lg:px-8">
-        <a 
-        class="px-6 py-3 text-white no-underline bg-blue-500 rounded hover:bg-blue-600 hover:underline hover:text-blue-200"
-        href="/admin/events/add">
-            Add
-        </a>
-    </div>
-    @endif
+        @if(Auth::user()->role == 'admin')
+        <span class="ml-6">
+            <a 
+            class="px-2 py-1 text-white no-underline bg-blue-500 rounded hover:bg-blue-600 hover:underline hover:text-blue-200"
+            href="/admin/events/add">
+                Add
+            </a>
+        </span>
+        @endif
+    </x-slot>
 
     <div class="p-4">
     @foreach ($Events as $event)
@@ -28,10 +28,13 @@
                     </div>
 
                     <div class="grow p-1 relative">
+
+                    @if(Auth::user()->role == 'admin')
                         <div class="absolute top-0 right-0">
                             <a href="/admin/events/edit/{{$event->id}}"><x-forkawesome-pencil class="inline-block w-6 h-6 pl-1 ml-0.5 text-blue-400"/></a>
                             <a href="/admin/events/delete/{{$event->id}}"><x-forkawesome-ban class="inline-block w-6 h-6 pl-1 ml-0.5 text-red-600"/></a>
                         </div>
+                    @endif
                     <style>
                         details > summary {
                         list-style: none;

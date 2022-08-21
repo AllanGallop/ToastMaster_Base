@@ -24,4 +24,7 @@ class EventLocations extends Model
         'Country',
         'Tel'
     ];
+
+    public $timestamps = false;
+
 }

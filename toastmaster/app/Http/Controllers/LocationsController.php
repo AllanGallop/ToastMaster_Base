@@ -14,7 +14,12 @@ class LocationsController extends Controller
 {
     public function view($id)
     {
-        $events = EventLocations::find($id);
+        $lcoation = EventLocations::find($id);
         return view('location', ['Location'=>$location]);
+    }
+    public function viewAll()
+    {
+        $locations = EventLocations::orderBy('Address_1', 'DESC')->paginate(15);
+        return view('profile/locations', ['locations'=>$locations]);
     }
 }

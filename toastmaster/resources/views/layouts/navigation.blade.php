@@ -17,8 +17,16 @@
                         {{ __('Profile') }}
                     </x-nav-link>
 
+                    <x-nav-link :href="route('profile/posts')" :active="request()->routeIs('profile/posts')">
+                        {{ __('Posts') }}
+                    </x-nav-link>
+
                     <x-nav-link :href="route('profile/events')" :active="request()->routeIs('profile/events')">
                         {{ __('Events') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('profile/locations')" :active="request()->routeIs('profile/locations')">
+                        {{ __('Locations') }}
                     </x-nav-link>
 
                     @if( Auth::user()->role == 'admin')

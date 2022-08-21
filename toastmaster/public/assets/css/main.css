@@ -1,0 +1,332 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width:100vw;
+    height:100vh;
+    overflow: hidden;
+}
+.wrapper {
+    height:100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: thin;
+}
+.wrapper nav {
+    position: sticky;
+    width:100%;
+    top: .5em;
+    right: .5em;
+    width: 100%;
+    text-align: right;
+    z-index: 9000;
+    font-family: 'Roboto Condensed';
+    color:white;
+}
+.wrapper nav a {
+    color:inherit;
+    text-decoration: none;
+    font-size: 1.5em;
+    margin:0 .5em;
+}
+.wrapper nav a.active {
+    font-weight: bold;
+}
+.wrapper section {
+    position: relative;
+    height:100vh;
+    width:100vw;
+    scroll-snap-align: center;
+    background-color: #FFF;
+    font-family: Helvetica, Arial, sans-serif;
+}
+.wrapper section h3.title {
+    position:absolute;
+    top:.5em;
+    left:.5em;
+}
+.wrapper section#splash-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #201e1e;
+}
+.wrapper section#splash-page img {
+    display:block;
+    height:20vw;
+    max-height:4em;
+    min-height:1em;
+}
+.wrapper section#splash-page h1 {
+    display:block;
+    font-family: 'Roboto Condensed';
+    text-decoration: none;
+    color: #7cf57c;
+    font-size:1.6rem;
+}
+.wrapper section#splash-page small {
+    display: block;
+    color: #FFFFFF;
+    font-size:1.2rem;
+    text-align: center;
+}
+.wrapper section#splash-page blockquote {
+    color: #FFF;
+    font-style: italic;
+    font-size: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+.wrapper section#splash-page .arrow {
+    position:absolute;
+    display: inline-block;
+    color:#FFFFFF;
+    bottom:1rem;
+    font-family: 'Material Icons';
+    font-size: 3rem;
+    content:'&#e7cd';
+    animation: bounce 1s ease infinite;
+}
+@keyframes bounce {
+    0%   { transform: scale(1,1) translateY(0); }
+    10%  { transform: scale(1.1,.9) translateY(0); }
+    30%  { transform: scale(.9,1.1)   translateY(-35px);}
+    50%  { transform: scale(1.05,.95) translateY(0); }
+    58%  { transform: scale(1,1) translateY(-7px); }
+    65%  { transform: scale(1,1) translateY(0);}
+    100% { transform: scale(1,1) translateY(0);}
+}
+
+
+.wrapper section#about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/assets/images/stock_art_1.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.wrapper section#about ul {
+    list-style: none;
+    width:850px;
+    overflow-x: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+.wrapper section#about ul li {
+    width: 11em;
+    text-align: center;
+    background-color: rgba(0,0,0,0.8);
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.wrapper section#about ul li .material-icons {
+    background-color:#7cf57c;
+    color:white;
+    font-size:4em;
+    padding:.25em;
+    border-radius: 50%;
+    margin-top:.5em;
+}
+.wrapper section#about ul li h3 {
+    font-size: 1.1em;
+    word-wrap: normal;
+    font-weight: 600;
+    height:2.2em;
+}
+.wrapper section#about ul li p {
+    font-size: 1em;
+    word-wrap: normal;
+    font-weight: 400;
+    padding: 0 1em 1em 1em;
+}
+.wrapper section#news {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    background-color: rgb(236, 236, 236);
+}
+.wrapper section#news #news-scroller {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    overflow-x: hidden; 
+    height: 100%;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+.wrapper section#news #news-scroller .content {
+    width: fit-content;
+    height: 90vh;
+    overflow-y: hidden;
+    white-space: nowrap;
+    overflow-x: scroll;
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
+}
+.wrapper section#news #news-scroller article {
+    width: 360px;
+    position: relative;
+    text-align: justify;
+    font-family: helv;
+    background: white;
+    margin: 1em;
+    display: inline-block;
+    border-radius: .5em;
+    padding: 1.5em;
+    height: 85%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    -webkit-box-shadow: 4px 4px 10px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 4px 10px -7px rgba(0,0,0,0.75);
+    box-shadow: 4px 4px 10px -7px rgba(0,0,0,0.75);
+    white-space: normal;
+}
+.wrapper section#events {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/assets/images/stock_art_2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.wrapper section#events #events-scroller {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+.wrapper section#events #events-scroller .content {
+    width: fit-content;
+    height: 70vh;
+    margin:1em;
+    overflow-y: hidden;
+    white-space: nowrap;
+    overflow-x: scroll;
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
+    scrollbar-color: #7575753b transparent;
+}
+.wrapper section#events #events-scroller article {
+    width: 360px;
+    position: relative;
+    text-align: justify;
+    font-family: helv;
+    background: transparent;
+    margin: 1em;
+    display: inline-block;
+    height: 90%;
+}
+.wrapper section#events #events-scroller article .date {
+    height:4em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap:1em;
+    text-align: center;
+    background-color: rgba(0,0,0,0.85);
+    color: white;
+}
+.wrapper section#events #events-scroller article .info {
+    display: block;
+    height:calc(100% - 4em);
+    overflow-y:scroll;
+    scrollbar-width: thin;
+    padding:.5em;
+    background-color: rgba(255,255,255,.85);
+}
+.wrapper section#events #events-scroller article .info h3 {
+    margin:.3em 0 .3em 0;
+    text-align: center;
+    font-size:1.5em;
+}
+.wrapper section#contact {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    background-image: url('/assets/images/stock_art_3.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.wrapper section#contact .contact-form {
+    width:100%;
+    max-width:300px;
+    padding:1em;
+    display:flex;
+    flex-direction: column;
+    border-radius: .5em;
+    background-color:rgba(0,0,0,0.75);
+    -webkit-box-shadow: 4px 4px 10px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 4px 10px -7px rgba(0,0,0,0.75);
+    box-shadow: 4px 4px 10px -7px rgba(0,0,0,0.75);
+}
+.wrapper section#contact .contact-form fieldset {
+    border:none;
+    display: flex;
+    flex-direction: column;
+    padding:.6em;
+}
+.wrapper section#contact .contact-form fieldset label {
+    display:block;
+    color:white;
+}
+.wrapper section#contact .contact-form fieldset input, textarea {
+    display: block;
+    border-radius: .5em;
+    border: 1px solid rgb(78, 78, 78);
+    width: 100%;
+    max-width:360px;
+    padding: 1em;
+    box-sizing: border-box;
+    resize:none;
+    scrollbar-width: thin;
+}
+.wrapper section#contact .contact-form button {
+    width:fit-content;
+    border-radius: .5em;
+    padding:.5em 1em;
+    margin: 0 auto;
+    border: 1px solid #7cf57c;
+    background-color: #7cf57c;
+}
+
+
+/*
+*   Static
+*/
+.wrapper section#news #news-scroller article::after {
+    content: "";
+    position: sticky;
+    z-index: 1;
+    bottom: -1.5em;
+    left: 0;
+    pointer-events: none;
+    background-image: linear-gradient(to bottom, rgba(255,255,255, 0), rgba(255,255,255, 1) 90%);
+    width: 100%;
+    height: 4em;
+    display: block;
+}
+#scroll {
+    cursor: grab;
+}
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+  }
